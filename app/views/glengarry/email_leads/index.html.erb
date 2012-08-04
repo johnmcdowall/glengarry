@@ -1,0 +1,35 @@
+<h1>Listing email_leads</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Ip address</th>
+    <th>Referer</th>
+    <th>Lat</th>
+    <th>Long</th>
+    <th>City</th>
+    <th>Country</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @email_leads.each do |email_lead| %>
+  <tr>
+    <td><%= email_lead.email %></td>
+    <td><%= email_lead.ip_address %></td>
+    <td><%= email_lead.referer %></td>
+    <td><%= email_lead.lat %></td>
+    <td><%= email_lead.long %></td>
+    <td><%= email_lead.city %></td>
+    <td><%= email_lead.country %></td>
+    <td><%= link_to 'Show', email_lead %></td>
+    <td><%= link_to 'Edit', edit_email_lead_path(email_lead) %></td>
+    <td><%= link_to 'Destroy', email_lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Email lead', new_email_lead_path %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @email_lead.email %>
+</p>
+
+<p>
+  <b>Ip address:</b>
+  <%= @email_lead.ip_address %>
+</p>
+
+<p>
+  <b>Referer:</b>
+  <%= @email_lead.referer %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @email_lead.lat %>
+</p>
+
+<p>
+  <b>Long:</b>
+  <%= @email_lead.long %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @email_lead.city %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @email_lead.country %>
+</p>
+
+
+<%= link_to 'Edit', edit_email_lead_path(@email_lead) %> |
+<%= link_to 'Back', email_leads_path %>

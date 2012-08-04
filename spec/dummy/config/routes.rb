@@ -1,5 +1,3 @@
-Rails.application.routes.draw do root to: 'home#index'
-
-
+Rails.application.routes.draw do 
   mount Glengarry::Engine => "/glengarry"
 end
