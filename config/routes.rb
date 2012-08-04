@@ -1,2 +1,5 @@
-Glengarry::Engine.routes.draw do
+Glengarry::Engine.routes.draw do root to: 'dashboard#index'
+
+  get "dashboard/index"
+
 end
