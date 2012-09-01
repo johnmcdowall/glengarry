@@ -1,0 +1,142 @@
+body {
+  background: url("<%= asset_path('glengarry/bg.png') %>");
+  font-family: "PT Sans Narrow", "Verdana";
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  letter-spacing: .03em;
+  line-height: 1.5;
+}
+
+header {
+  background: #FFF;
+  height: 120px;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+h1 {
+  width: 800px;
+  height: 120px;
+  padding-top: 30px;
+  text-align: right;
+  margin: 0px auto;
+}
+
+h1 small {
+  display: block;
+  font-size: 12px;
+  font-weight: 100;
+  font-family: helvetica, sans-serif;
+}
+
+#page {
+  width: 800px;
+  margin: 0px auto;
+}
+
+table {
+  border: 1px solid #DFDFDF;
+  background-color: #F9F9F9;
+  width: 100%;
+  margin-top: 1.6em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-family: Arial,"Bitstream Vera Sans",Helvetica,Verdana,sans-serif;
+  color: #333;
+  margin-bottom: 2em;
+}
+table td, table th {
+  border-top-color: white;
+  border-bottom: 1px solid #DFDFDF;
+  color: #555;
+}
+table th {
+  text-shadow: rgba(255, 255, 255, 0.796875) 0px 1px 0px;
+  font-family: Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+  font-weight: normal;
+  padding: 7px 7px 8px;
+  text-align: left;
+  line-height: 1.3em;
+  font-size: 14px;
+  height: 50px;
+}
+
+table tr {
+  height: 3em;
+}
+
+table td {
+  font-size: 12px;
+  padding: 4px 7px 2px;
+  vertical-align: top;
+}
+
+.pagination {
+  text-align: center;
+  padding: 1em 0 0 0 ;
+}
+
+.pagination .page, .first, .prev, .next, .last {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+
+.pagination .first, .last {
+  width: 64px; 
+}
+
+/* cupid blue (inspired by okcupid.com)
+*******************************************************************************/
+button {
+  float: right;
+  background-color: #d7e5f5;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d7e5f5), color-stop(100%, #cbe0f5));
+  background-image: -webkit-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: -moz-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: -ms-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: -o-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: linear-gradient(top, #d7e5f5, #cbe0f5);
+  border-top: 1px solid #abbbcc;
+  border-left: 1px solid #a7b6c7;
+  border-bottom: 1px solid #a1afbf;
+  border-right: 1px solid #a7b6c7;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-box-shadow: inset 0 1px 0 0 white;
+  -moz-box-shadow: inset 0 1px 0 0 white;
+  box-shadow: inset 0 1px 0 0 white;
+  color: #1a3e66;
+  font: normal 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  line-height: 1;
+  padding: 6px 0 7px 0;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+  width: 150px; }
+  button:hover {
+    background-color: #ccd9e8;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ccd9e8), color-stop(100%, #c1d4e8));
+    background-image: -webkit-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: -moz-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: -ms-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: -o-linear-gradient(top, #ccd9e8, #c1d4e8);
+    background-image: linear-gradient(top, #ccd9e8, #c1d4e8);
+    border-top: 1px solid #a1afbf;
+    border-left: 1px solid #9caaba;
+    border-bottom: 1px solid #96a3b3;
+    border-right: 1px solid #9caaba;
+    -webkit-box-shadow: inset 0 1px 0 0 #f2f2f2;
+    -moz-box-shadow: inset 0 1px 0 0 #f2f2f2;
+    box-shadow: inset 0 1px 0 0 #f2f2f2;
+    color: #163659;
+    cursor: pointer; }
+  button:active {
+    border: 1px solid #8c98a7;
+    -webkit-box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee;
+    box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee; 
+}
+
