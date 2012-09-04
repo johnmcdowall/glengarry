@@ -2,6 +2,9 @@ require_dependency "glengarry/application_controller"
 
 module Glengarry
   class EmailLeadsController < ApplicationController
+
+    before_filter :authenticate, :except=>:create
+
     def index
       @email_leads = EmailLead.page(params[:page]).per(10)
       @email_lead_count = EmailLead.count
