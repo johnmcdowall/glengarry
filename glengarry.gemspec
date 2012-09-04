@@ -7,13 +7,13 @@ require "glengarry/version"
 Gem::Specification.new do |s|
   s.name        = "glengarry"
   s.version     = Glengarry::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Glengarry."
-  s.description = "TODO: Description of Glengarry."
+  s.authors     = ["John McDowall"]
+  s.email       = ["john@mcdowall.info"]
+  s.homepage    = "https://github.com/johnmcdowall/glengarry"
+  s.summary     = "A Rails 3.2 engine for capturing email leads."
+  s.description = "I HATE THIS FIELD"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 3.2.7"
   s.add_dependency "jquery-rails"
