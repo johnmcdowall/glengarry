@@ -19,6 +19,10 @@ Then run ```bundle install```. Now install the migrations:
 
     bundle exec glengarry:install:migrations
 
+Now simply mount the engine at the path of your choice in your ```config\routes.rb``` file as follows:
+
+    mount Glengarry::Engine => "/glengarry"
+
 ## Lockin' that down
 
 You can add basic HTTP authentication by creating an initializer in your ```config``` directory like so:
@@ -34,3 +38,10 @@ You can add basic HTTP authentication by creating an initializer in your ```conf
 You'll have to use the dummy application under spec/dummy to first create the test database. Then simply do the usual:
 
     bundle exec rake spec
+
+## Complainin', bro?
+
+You can get me on Twitter as @MrMcDowall or on App.net as @jmd - have at it, hopefully I'll see you at the Country Club.
+
+## License
+It's all MIT License. Do what you want, check the MIT-LICENSE file, and I'm not responsible for anything you do with it. Bon appetit.
