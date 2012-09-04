@@ -1,4 +1,5 @@
 require_dependency "glengarry/application_controller"
+require 'csv'
 
 module Glengarry
   class EmailLeadsController < ApplicationController
@@ -47,6 +48,29 @@ module Glengarry
       respond_to do |format|
         format.html { redirect_to email_leads_url }
         format.json { head :no_content }
+      end
+    end
+    
+    def download
+      respond_to do |format|
+        format.csv {
+            @emails = EmailLead.all
+            @columns = ["Email", "IP Address", "Referer", "Latitude", "Longitude", "City", "Country"].to_csv
+            @filename = "emails-#{Date.today.to_s(:db)}"
+
+            self.response.headers["Content-Type"] ||= 'text/csv'
+            self.response.headers["Content-Disposition"] = "attachment; filename=#{@filename}"
+            self.response.headers["Content-Transfer-Encoding"] = "binary"
+
+            self.response_body = Enumerator.new do |y|
+              @emails.each_with_index do |email, i|
+                if i == 0
+                  y << @columns
+                end
+                y << [email.email, email.ip_address, email.referer, email.lat, email.long, email.city, email.country].to_csv
+              end
+            end
+          }
       end
     end
   end

@@ -3,7 +3,7 @@
 <% end %>
 
 <% if @email_lead_count >0 %>
-  <a href="#"><button>Download all as CSV</button></a>
+  <a href="<%=download_csv_path%>.csv"><button>Download all as CSV</button></a>
   <table>
     <tr>
       <th>Email</th>
