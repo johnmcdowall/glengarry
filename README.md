@@ -2,7 +2,8 @@
 
 ## Glengarry
 
-Glengarry is a Rails 3.2 engine that allows you to collect and provides an interface for collecting email leads, CAUSE YOU SHOULD ALWAYS BE CLOSIN'.
+Glengarry is a Rails 3.2 engine that allows you to collect and provides an interface for collecting email leads, CAUSE YOU SHOULD ALWAYS BE CLOSIN'. It's a hack that I wrote quickly to give me what I
+needed - it may do the same for you, but I make no representations to its quality or completeness.
 
 The email address, IP Address submitting the email address, and reverse geo-coded latitude, longitude, city and country are stored and presented to you in this lovely UI:
 ![UI](http://f.cl.ly/items/2p2y0L3g3V0B1S0h1A37/Screen%20Shot%202012-09-04%20at%203.45.21%20PM.png)
