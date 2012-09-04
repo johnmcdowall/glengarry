@@ -1,35 +1,39 @@
 <% content_for(:email_count) do %>
-  <%= @email_lead_count %>
+  <%= @email_lead_count if @email_lead_count > 0%>
 <% end %>
 
-<a href="#"><button>Download all as CSV</button></a>
-<table>
-  <tr>
-    <th>Email</th>
-    <th>Ip address</th>
-    <th>Referer</th>
-    <th>Lat</th>
-    <th>Long</th>
-    <th>City</th>
-    <th>Country</th>
-    <th></th>
-  </tr>
+<% if @email_lead_count >0 %>
+  <a href="#"><button>Download all as CSV</button></a>
+  <table>
+    <tr>
+      <th>Email</th>
+      <th>Ip address</th>
+      <th>Referer</th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th>City</th>
+      <th>Country</th>
+      <th></th>
+    </tr>
 
-<% @email_leads.each do |email_lead| %>
+  <% @email_leads.each do |email_lead| %>
+    <tr>
+      <td><%= email_lead.email %></td>
+      <td><%= email_lead.ip_address %></td>
+      <td><%= email_lead.referer %></td>
+      <td><%= email_lead.lat %></td>
+      <td><%= email_lead.long %></td>
+      <td><%= email_lead.city %></td>
+      <td><%= email_lead.country %></td>
+      <td><%= link_to 'Destroy', email_lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
   <tr>
-    <td><%= email_lead.email %></td>
-    <td><%= email_lead.ip_address %></td>
-    <td><%= email_lead.referer %></td>
-    <td><%= email_lead.lat %></td>
-    <td><%= email_lead.long %></td>
-    <td><%= email_lead.city %></td>
-    <td><%= email_lead.country %></td>
-    <td><%= link_to 'Destroy', email_lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td colspan="9">
+      <%= paginate @email_leads %>
+    </td>
   </tr>
+  </table>
+<% else %>
+  <h1>No Email Leads captured yet :(</h1>
 <% end %>
-<tr>
-  <td colspan="9">
-    <%= paginate @email_leads %>
-  </td>
-</tr>
-</table>

@@ -1,9 +1,13 @@
+require_relative '../../../lib/email_validator'
+
 module Glengarry
+
   class EmailLead < ActiveRecord::Base
+    extend Geocoder::Model::ActiveRecord
+
     attr_accessible :email
 
-   # validates :email, :email => true, :uniqueness => true
-    extend Geocoder::Model::ActiveRecord
+    validates :email, :presence => true, :uniqueness => true, :'Glengarry::Email'=>true
 
     geocoded_by :ip_address, :latitude => :lat, :longitude => :long
     reverse_geocoded_by :lat, :long do |obj, results|
@@ -12,10 +16,6 @@ module Glengarry
 
     after_validation :full_geocode
 
-    def set_ip_and_referer(ip, referer)
-      self.ip_address, self.referer = ip, referer
-    end
-
     def set_reversed_location(results)
       if geo = results.first
         self.city = geo.city
@@ -23,9 +23,12 @@ module Glengarry
       end
     end
 
+    private
+
     def full_geocode
       geocode
       reverse_geocode
     end
   end
+
 end
