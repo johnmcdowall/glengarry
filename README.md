@@ -24,6 +24,18 @@ Now simply mount the engine at the path of your choice in your ```config\routes.
 
     mount Glengarry::Engine => "/glengarry"
 
+## Using Glengarry in you App
+
+Just make a simple form like so:
+
+    = form_for(Glengarry::EmailLead.new, :url=>glengarry.email_leads_path) do |f|
+      - if flash[:notice].present?
+         = content_tag :div, flash[:notice], :id => "flash_notice" if flash[:notice].is_a?(String)
+      = f.text_field :email
+      = f.submit "Submit"
+
+After ```POST```ing to the Engine's path, a redirect is issued back to the location the ```POST``` came from. You probably want to use an ```AJAX``` request anyway.
+
 ## Lockin' that down
 
 You can add basic HTTP authentication by creating an initializer in your ```config``` directory like so:
