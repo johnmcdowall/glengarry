@@ -36,7 +36,7 @@ module Glengarry
           format.json { render json: @email_lead, status: :created, location: @email_lead }
         else
           format.html { redirect_to :back, notice: @email_lead.errors }
-          format.json { render json: @email_lead.errors, status: :invalid_email }
+          format.json { render json: @email_lead.errors, status: :unprocessable_entity }
         end
       end
     end
