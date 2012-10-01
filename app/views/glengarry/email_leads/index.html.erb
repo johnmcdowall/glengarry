@@ -13,6 +13,7 @@
       <th>Long</th>
       <th>City</th>
       <th>Country</th>
+      <th>Active</th>
       <th></th>
     </tr>
 
@@ -25,6 +26,7 @@
       <td><%= email_lead.long %></td>
       <td><%= email_lead.city %></td>
       <td><%= email_lead.country %></td>
+      <td><%= email_lead.active %></td>
       <td><%= link_to 'Destroy', email_lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
