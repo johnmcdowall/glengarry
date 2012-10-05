@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    glengarry (0.0.3)
+    glengarry (0.0.4)
       geocoder
       jquery-rails
       kaminari
