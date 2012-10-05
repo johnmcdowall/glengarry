@@ -14,7 +14,8 @@ module Glengarry
       obj.set_reversed_location(results)
     end
 
-    after_validation :full_geocode, :generate_activation_token
+    after_validation :full_geocode
+    before_save :generate_activation_token
 
     def self.activate
       self.active = true
