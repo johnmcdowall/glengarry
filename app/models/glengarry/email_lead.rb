@@ -17,7 +17,7 @@ module Glengarry
     after_validation :full_geocode
     before_save :generate_activation_token
 
-    def self.activate
+    def activate!
       self.active = true
       save!
     end
